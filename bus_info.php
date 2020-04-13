@@ -250,9 +250,9 @@
 
                                         // $curr_name = $arr[$i];
                                         // $curr_age = $arr1[$i];
-                                        // $user_id = $_SESSION['s_id'];
+                                        $user_id = $_SESSION['s_id'];
 
-                                        $query = "INSERT INTO orders(bus_id, passenger_count, source, destination,date,cost) VALUES($selected_bus, $count, '$source', '$destination', '$date', $total_cost)";
+                                        $query = "INSERT INTO orders(bus_id, user_id, passenger_count, source, destination, date, cost) VALUES($selected_bus, $user_id, $count, '$source', '$destination', '$date', $total_cost)";
 
                                         // $query_seat_update = "UPDATE posts SET available_seats = $available_seats + $count WHERE post_id = $bus_id";
 

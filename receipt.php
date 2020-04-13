@@ -49,8 +49,8 @@
         $select_order = mysqli_query($connection,$query);
 
         while ($row = mysqli_fetch_assoc($select_order)) {
-            $passenger = $row['user_name'];
-            $passenger_age = $row['user_age'];
+            // $passenger = $row['user_name'];
+            $passenger_count = $row['passenger_count'];
             $source = $row['source'];
             $destination = $row['destination'];
             $dob = $row['date'];
@@ -64,13 +64,13 @@
 
             <table class="table table-striped" style="width: 100%">
               <tbody>
-                <tr>
+                <!-- <tr>
                   <td><b>Passenger Name:</b> </td>
                   <td><?php echo $passenger; ?></td>
-                </tr>
+                </tr> -->
                 <tr>
-                  <td><b>Passenger Age:</b> </td>
-                  <td><?php echo $passenger_age; ?></td>
+                  <td><b>Number of Passengers:</b> </td>
+                  <td><?php echo $passenger_count; ?></td>
                 </tr>
                 <tr>
                   <td><b>Source: </b></td>
@@ -110,8 +110,8 @@
                   $image = $row['post_image'];
                   $date = $row['post_date'];
                   $time = $row['post_via_time'];
-                  $bus_stations = split(" ",$intermediate_station);
-                  $bus_times = split(" ",$time);
+                  $bus_stations = explode(" ",$intermediate_station);
+                  $bus_times = explode(" ",$time);
               
 
            ?>

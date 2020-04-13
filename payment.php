@@ -19,6 +19,12 @@
 
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script> -->
 	<script src="js/bootstrap.min.js"></script>
+  <script>
+    function myFunction() {
+      alert("Payment successful! Your tickets are booked.");
+      window.location= "index.php";
+    }
+  </script>
 
     <div class="container" style="margin-bottom: 30px; margin-top: 3%; width: 300px; align-content: center;">
         <div class="cost">
@@ -84,7 +90,7 @@
                 </div>
               </form>
               <br>
-              <button type="button" class="btn btn-outline-success btn-lg" data-toggle="modal" data-target="#otpModal">Proceed to Payment</button>
+              <button type="button" onclick="myFunction()" class="btn btn-outline-success btn-lg" data-toggle="modal" data-target="#otpModal">Proceed to Payment</button>
         </div>
     </div>
     <!-- </div> -->

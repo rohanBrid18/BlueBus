@@ -22,19 +22,19 @@
     		}
     	}
 
-        $query = "SELECT available_seats FROM posts WHERE post_id=$bus_id";
-        $get_seats = mysqli_query($connection,$query);
+        // $query = "SELECT available_seats FROM posts WHERE post_id=$bus_id";
+        // $get_seats = mysqli_query($connection,$query);
 
-        while ($row = mysqli_fetch_assoc($get_seats)) {
-            $available_seats = $row['available_seats'];
-        }
+        // while ($row = mysqli_fetch_assoc($get_seats)) {
+        //     $available_seats = $row['available_seats'];
+        // }
 
-        $query = "UPDATE posts SET available_seats=$available_seats-1 WHERE post_id=$bus_id";
-        $update_seats = mysqli_query($connection,$query);
+        // $query = "UPDATE posts SET available_seats=$available_seats-1 WHERE post_id=$bus_id";
+        // $update_seats = mysqli_query($connection,$query);
 
     ?>
 
-    <div class="container" style="width: 50%;">
+    <div class="container" style="margin-top: 10%; width: 50%;">
         
     	<p><h3>Your ticket stands Cancelled as per your Request</h3></p>
     	<br>

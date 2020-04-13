@@ -74,13 +74,13 @@
           <h3><b>Past Bookings:</b></h3>
           <?php
 
-          $query = "SELECT * FROM orders INNER JOIN posts ON orders.bus_id = posts.post_id where orders.user_id = '$curr_user_id'";
+          $query = "SELECT * FROM orders INNER JOIN posts ON orders.bus_id = posts.post_id where orders.user_id = 31 and orders.date <= now()";
 
           $select_user_orders = mysqli_query($connection, $query);
 
           while ($row = mysqli_fetch_assoc($select_user_orders)) {
-            $passenger = $row['user_name'];
-            $passenger_age = $row['user_age'];
+            // $passenger = $row['user_name'];
+            // $passenger_age = $row['user_age'];
             $source = $row['source'];
             $destination = $row['destination'];
             $dob = $row['date'];
@@ -92,21 +92,21 @@
             //$new_query = "SELECT post_date FROM posts WHERE post_id = $busid";
 
             //echo $busdate;
-            if (date("Y-m-d") > $busdate) {
-              # code...
+            // if (date("Y-m-d") > $busdate) {
+            //   # code...
             
-            ?>
-            <br>
+            // ?>
+            <!-- <br> -->
             <table class="table table-striped" style="width: 50%">
               <tbody>
-                <tr>
+                <!-- <tr>
                   <td><b>Passenger Name:</b> </td>
                   <td><?php echo $passenger; ?></td>
                 </tr>
                 <tr>
                   <td><b>Passenger Age:</b> </td>
                   <td><?php echo $passenger_age; ?></td>
-                </tr>
+                </tr> -->
                 <tr>
                   <td><b>Source: </b></td>
                   <td><?php echo ucfirst($source); ?></td>
@@ -131,20 +131,20 @@
               </tbody>
             </table>
 
-          <?php } } ?>
+          <?php } ?>
 
-<br><br><br>
+          <br><br>
 
           <h3 style="margin-bottom: -40px"><b>Upcoming Travels:</b></h3>
           <?php
 
-          $query = "SELECT * FROM orders INNER JOIN posts ON orders.bus_id = posts.post_id where orders.user_id = $curr_user_id";
+          $query = "SELECT * FROM orders INNER JOIN posts ON orders.bus_id = posts.post_id where orders.user_id = $curr_user_id and orders.date > now()";
 
           $select_user_orders = mysqli_query($connection, $query);
 
           while ($row = mysqli_fetch_assoc($select_user_orders)) {
-            $passenger = $row['user_name'];
-            $passenger_age = $row['user_age'];
+            // $passenger = $row['user_name'];
+            // $passenger_age = $row['user_age'];
             $source = $row['source'];
             $destination = $row['destination'];
             $dob = $row['date'];
@@ -156,21 +156,21 @@
             //$new_query = "SELECT post_date FROM posts WHERE post_id = $busid";
 
             //echo $busdate;
-            if (date("Y-m-d") < $busdate) {
-              # code...
+            // if (date("Y-m-d") < $busdate) {
+            //   # code...
             
-            ?>
-            <br>
+            // ?>
+            <!-- <br> -->
             <table class="table table-striped" style="width: 50%">
               <tbody>
-                <tr>
+                <!-- <tr>
                   <td><b>Passenger Name:</b> </td>
                   <td><?php echo $passenger; ?></td>
                 </tr>
                 <tr>
                   <td><b>Passenger Age:</b> </td>
                   <td><?php echo $passenger_age; ?></td>
-                </tr>
+                </tr> -->
                 <tr>
                   <td><b>Source: </b></td>
                   <td><?php echo ucfirst($source); ?></td>
@@ -206,7 +206,7 @@
               </tbody>
             </table>
 
-          <?php } } ?>
+          <?php } ?>
 
 
 
