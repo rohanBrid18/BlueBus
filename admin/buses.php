@@ -69,7 +69,7 @@
                                             $date = $row['post_date'];
                                             $time = $row['post_via_time'];
                                         
-                                        if ($date > date('Y-m-d')) {
+                                        // if ($date > date('Y-m-d')) {
                                             # code...
                                         
 
@@ -85,9 +85,9 @@
                                         <td><?php echo $time ?></td>
                                         <?php echo "<td><a href='buses.php?delete=$bus_id'>Delete</a></td>"; ?>
                                         <?php echo "<td><a href='buses.php?source=update&bus_id=$bus_id'>Update</a></td>"; ?>
-                                        <?php echo "<td><a href='buses.php?clone_bus_id=$bus_id'>Clone</a></td>"; ?>
+                                        <!-- <?php echo "<td><a href='buses.php?clone_bus_id=$bus_id'>Clone</a></td>"; ?> -->
                                     </tr>
-                                    <?php } }?>
+                                    <?php } ?>
                                 </tbody>
                                 </table><?php
                                 break;
