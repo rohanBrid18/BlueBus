@@ -140,13 +140,27 @@
                                     <div class="form-group">
                                         <label class="control-label col-sm-2" for="email">Source:</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="email" placeholder="Source" name="source">
+                                            <!-- <input type="text" class="form-control" id="email" placeholder="Source" name="source"> -->
+                                            <select class="custom-select" id="inputGroupSelect01" name="source">
+                                                <option selected>Enter Source</option>
+                                                <?php 
+                                                    for ($i=0; $i < sizeof($bus_stations); $i++) { ?>
+                                                        <option value=<?php echo $bus_stations[$i]; ?>><?php echo $bus_stations[$i]; ?></option>
+                                                <?php } ?>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-sm-2" for="email">Destination:</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="email" placeholder="Destination" name="destination">
+                                            <!-- <input type="text" class="form-control" id="email" placeholder="Destination" name="destination"> -->
+                                            <select class="custom-select" id="inputGroupSelect01" name="destination">
+                                                <option selected>Enter Destination</option>
+                                                <?php 
+                                                    for ($i=0; $i < sizeof($bus_stations); $i++) { ?>
+                                                        <option value=<?php echo $bus_stations[$i]; ?>><?php echo $bus_stations[$i]; ?></option>
+                                                <?php } ?>
+                                            </select>
                                         </div>
                                     </div>
 
