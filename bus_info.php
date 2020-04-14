@@ -53,10 +53,7 @@
                         <p><?php echo $bus_content ?></p>
                         
                         <div class="jumbotron jumb">
-                            <h2><b>Seat Matrix:</b></h2>
-                            <h5>Max:         <?php echo $max_seats ?></h5>
-                            <!-- <h5>Available:   <?php echo $available_seats ?></h5> -->
-
+                            <h3>Max Seats:         <?php echo $max_seats ?></h3>
 
                             <h2><b>Stations Covered:</b></h2>
                             <table class="table table-striped" style="width: 100%; margin-top:-20px;">
@@ -80,11 +77,24 @@
                             </table>
                         </div>
 
+                        <?php
+                            $form1_vis = "hidden";
+                            $form2_vis = "hidden";
+                            $form3_vis = "hidden";
+                        ?>
+
                         <div class="jumbotron">
                             <div class="container-fluid">
+                                
+                                <?php 
+                                    if (!isset($_POST['doj']) and !isset($_GET['doj'])) {
+                                        $form1_vis = "visible";
+                                    }
+                                ?>
+
                                 <h2>Enter Details:</h2>
 
-                                <form action="" method="post" class="form-horizontal">
+                                <form id="form1" action="" method="post" class="form-horizontal" style="visibility: <?php echo $form1_vis; ?>;">
                                     <input type="date" name="doj" style="margin-top: 10px; width: 40%" min=<?php echo date('Y-m-d');?> max=<?php echo date('Y-m-d', strtotime(date('Y-m-d'). ' + 29 days'));?> name="date" class="form-control" id="date" placeholder="dd/mm/yyyy" >
                                     <button class="btn-xs btn-primary" style="margin-left: 5px; margin-top: 5px">Check Availability</button>
                                 </form>
@@ -101,15 +111,18 @@
                                             $pass_count = $row['passenger_count'];
                                             $available_seats = $available_seats - $pass_count;
                                         }
+                                        
+                                        $form1_vis = "hidden";
+                                        $form2_vis = "visible";
                                     }
                                     else {
                                         $date = date($timestamp = 'time()');
                                     }
                                 ?>
 
-                                <form action="bus_info.php?bus_id=<?php echo $selected_bus ?>&doj=<?php echo $date; ?>" method="post" class="form-horizontal">
+                                <form id="form2" action="bus_info.php?bus_id=<?php echo $selected_bus ?>&doj=<?php echo $date; ?>" method="post" class="form-horizontal" style="visibility: <?php echo $form2_vis; ?>;">
 
-                                    <h5>Available:   <?php echo $available_seats ?></h5>
+                                    <h3>Available Seats:   <?php echo $available_seats ?></h3>
 
                                     <select name="passenger_count" style="margin-bottom: 15px;margin-top: 15px;">
                                         <option value="0">Ticket Count</option>
@@ -130,13 +143,17 @@
                                 <?php
                                     if (isset($_POST['passenger_count'])) {
                                         $passenger_count = $_POST['passenger_count'];
+
+                                        $form1_vis = "hidden";
+                                        $form2_vis = "hidden";
+                                        $form3_vis = "visible";
                                     }
                                     else {
                                         $passenger_count = 0;
                                     }
                                 ?>
 
-                                <form action="bus_info.php?bus_id=<?php echo $selected_bus ?>&doj=<?php echo $date; ?>&count=<?php echo $passenger_count ?>" method="post" class="form-horizontal">
+                                <form id="form3" action="bus_info.php?bus_id=<?php echo $selected_bus ?>&doj=<?php echo $date; ?>&count=<?php echo $passenger_count ?>" method="post" class="form-horizontal" style="visibility: <?php echo $form3_vis; ?>;">
                                     <div class="form-group">
                                         <label class="control-label col-sm-2" for="email">Source:</label>
                                         <div class="col-sm-10">
