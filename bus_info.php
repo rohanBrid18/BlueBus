@@ -80,15 +80,6 @@
                             </table>
                         </div>
 
-
-                        <?php
-
-                        if (isset($_SESSION['s_id'])) {
-                            # code...
-
-                        ?>
-
-
                         <div class="jumbotron">
                             <div class="container-fluid">
                                 <h2>Enter Details:</h2>
@@ -132,7 +123,7 @@
 
                                         ?>
                                     </select>
-                                    <button class="btn-xs btn-primary" style="margin-left: 5px;">GO</button>
+                                    <button class="btn-xs btn-primary" style="margin-left: 5px;" onclick="login_status()">GO</button>
 
                                 </form>
 
@@ -270,7 +261,6 @@
                                 ?>
                             </div>
                         </div>
-                        <?php } ?>
 
                         <hr>
                     <?php } ?>
@@ -368,5 +358,15 @@
         <!-- /.row -->
 
         <hr>
+
+        <script>
+            function login_status(){
+                <?php
+                    if (! isset($_SESSION['s_id'])) { ?>
+                        alert("Please login to continue.");
+                        window.location= "index.php";
+                <?php } ?>
+            }
+        </script>
 
 <?php include "includes/footer.php"; ?>
