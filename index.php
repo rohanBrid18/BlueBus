@@ -5,7 +5,7 @@
     <?php include "includes/navigation.php"; ?>
 
     <!-- Page Content -->
-    <div class="container">
+    <div class="container" style="background-image: url(images/backgorund.jpg); background-size: 100% 100%; width: 100%; margin-top: -2%;">
 
         <div class="row">
 

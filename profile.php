@@ -124,8 +124,8 @@
                   <td><?php echo $cost; ?></td>
                 </tr>
                 <tr>
-                  <td><b>Print Receipt<b></td>
-                  <td><a href=" receipt.php?orderid=<?php echo $orderid ?>">Receipt</a></td>
+                  <td><b>Print Ticket<b></td>
+                  <td><a href=" receipt.php?orderid=<?php echo $orderid ?>">Ticket</a></td>
                 </tr>
                 <br><br><br>
               </tbody>
@@ -192,8 +192,8 @@
                   <td><?php echo $cost; ?></td>
                 </tr>
                 <tr>
-                  <td><b>Print Receipt<b></td>
-                  <td><a href=" receipt.php?orderid=<?php echo $orderid ?>">Receipt</a></td>
+                  <td><b>Print Ticket<b></td>
+                  <td><a href=" receipt.php?orderid=<?php echo $orderid ?>">Ticket</a></td>
                 </tr>
                 <tr>
                   <td><b>Cancel Ticket<b></td>

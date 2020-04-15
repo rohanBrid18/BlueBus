@@ -1,4 +1,4 @@
-            <div class="col-md-4">
+            <div class="col-md-4" style="padding-top: 3%;">
 
                 <!-- Blog Search Well -->
                 <div class="well">
