@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 12, 2020 at 04:12 PM
+-- Generation Time: Apr 17, 2020 at 03:33 PM
 -- Server version: 5.7.21
 -- PHP Version: 5.6.35
 
@@ -92,27 +92,32 @@ DROP TABLE IF EXISTS `orders`;
 CREATE TABLE IF NOT EXISTS `orders` (
   `order_id` int(3) NOT NULL AUTO_INCREMENT,
   `bus_id` int(3) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `passenger_count` int(11) NOT NULL,
   `source` varchar(255) NOT NULL,
   `destination` varchar(255) NOT NULL,
   `date` date NOT NULL,
   `cost` int(3) NOT NULL,
   PRIMARY KEY (`order_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`order_id`, `bus_id`, `passenger_count`, `source`, `destination`, `date`, `cost`) VALUES
-(25, 3, 0, 'Delhi', 'Mumbai', '2020-04-11', 0),
-(28, 3, 2, 'Delhi', 'Mumbai', '2020-04-11', 0),
-(32, 3, 4, 'Mumbai', 'Delhi', '2020-04-14', 300),
-(33, 3, 2, 'Mumbai', 'Jaipur', '2020-04-14', 2000),
-(34, 1, 2, 'Mumbai', 'Pune', '2020-04-12', 400),
-(35, 1, 1, 'Mumbai', 'Lonavala', '2020-04-12', 100),
-(36, 2, 2, 'Mumbai', 'Chiplun', '2020-04-13', 300),
-(37, 4, 2, 'Mumbai', 'Bangalore', '2020-04-18', 2000);
+INSERT INTO `orders` (`order_id`, `bus_id`, `user_id`, `passenger_count`, `source`, `destination`, `date`, `cost`) VALUES
+(25, 3, 0, 0, 'Delhi', 'Mumbai', '2020-04-11', 0),
+(28, 3, 0, 2, 'Delhi', 'Mumbai', '2020-04-11', 0),
+(32, 3, 0, 4, 'Mumbai', 'Delhi', '2020-04-14', 300),
+(33, 3, 0, 2, 'Mumbai', 'Jaipur', '2020-04-14', 2000),
+(34, 1, 31, 2, 'Mumbai', 'Pune', '2020-04-12', 400),
+(35, 1, 31, 1, 'Mumbai', 'Lonavala', '2020-04-12', 100),
+(36, 2, 31, 2, 'Mumbai', 'Chiplun', '2020-04-13', 300),
+(39, 3, 31, 1, 'Mumbai', 'Udaipur', '2020-04-16', 700),
+(41, 3, 31, 2, 'Mumbai', 'Vadodara', '2020-04-17', 800),
+(42, 1, 31, 2, 'Mumbai', 'Lonavala', '2020-04-16', 200),
+(43, 2, 31, 2, 'Mumbai', 'Ratnagiri', '2020-04-16', 500),
+(44, 4, 31, 3, 'Mumbai', 'Kolhapur', '2020-04-16', 1500);
 
 -- --------------------------------------------------------
 
@@ -136,7 +141,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `post_query_count` int(3) NOT NULL,
   `max_seats` int(3) NOT NULL,
   PRIMARY KEY (`post_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `posts`
